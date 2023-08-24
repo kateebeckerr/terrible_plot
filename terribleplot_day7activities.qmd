@@ -43,7 +43,8 @@ axis.test.x = element_text(color = "red"))
 ggplot(data = terrible_plot_SF, aes(x = Sector_Detail2, y = Quantity)) +
   geom_point(fill = "green", shape = 23, color = "coral4" ) +
   facet_wrap(~ Commodity_Type, scales = "free")
-  geom_hline(yintercept = 70000, linetype = "dotted", color = "purple")
+  geom_hline(yintercept = 70000, linetype = "dotted", color = "purple") +
+    theme(element_rect(fill = "blue") 
   
                
 
@@ -65,4 +66,9 @@ ggplot(map) +
   geom_sf_text(aes(label = name), size = 2) +
   theme(legend.position = "none")
 
+
+ggplot(JD) +
+   geom_sf(aes(fill = AREA)) +
+   geom_sf_label(aes(label = NAME))
+}
 ```
